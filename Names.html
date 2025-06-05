@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>معايدة العيد</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <div id="greeting"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+
+    const greetings = {
+      "امي": {
+        message: "رشا، كل عيد وأنتي بخير وسعادة، وعسى نونه قطوتك تكون دوم مصدر بهجة وفرح في أيامك.",
+        gif: "Rasha.gif"
+      },
+      "عبدالله": {
+        message: "عيدك فرحة يا أمل، الله يجعل أيامك كلها راحة وسعادة.",
+        gif: "nada.gif"
+      },
+      "عبدالعزيز": {
+        message: "أراسيل، عيدك سعيد وزاهي، ودلعي كوكو وسكر وجيرو حبايبك اللي يملون حياتك حب وفرح.",
+        gif: "Araseel.gif"
+      },
+      "عبدالاله": {
+        message: "أسيل، الله يجعل عيدك دفء وسكون وقلوب حولك تحبك بصدق.",
+        gif: "dhay.gif"
+      },
+
+    };
+
+    const selected = greetings[name];
+
+    if (selected) {
+      document.getElementById("greeting").innerHTML = `
+        <h1>معايدتك من غوغو 💌</h1>
+        <p>${selected.message}</p>
+        <img src="${selected.gif}" alt="عيدية ${name}">
+        <br><br>
+        <a href="Eid.html">اختاري اسم ثاني</a>
+      `;
+    } else {
+      document.getElementById("greeting").innerHTML = `
+        <h1>ما عرفنا الاسم 😅</h1>
+        <p>ارجعي اختاري من جديد من القائمة.</p>
+        <a href="Eid.html">رجوع</a>
+      `;
+    }
+  </script>
+</body>
+</html>

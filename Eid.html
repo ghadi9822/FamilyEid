@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>عيدية العيد🎉</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>جتك امعيديه من غدي</h1>
+    <p>من انت!</p>
+    
+    <select id="nameSelect">
+      <option disabled selected>-- اختاري اسمك --</option>
+      <option value="امي">امي</option>
+      <option value="عبدالله">عبدالله</option>
+      <option value="عبدالعزيز">عبدالعزيز</option>
+      <option value="عبدالاله">عبدالاله</option>
+    </select>
+    
+    <button onclick="goToNames()">تم 🥳</button>
+
+    <img src="Ma.gif" alt="عيد GIF">
+  </div>
+
+  <script>
+    function goToNames() {
+      const name = document.getElementById('nameSelect').value;
+      if (name) {
+        window.location.href = `Names.html?name=${name}`;
+      }
+    }
+  </script>
+</body>
+</html>
